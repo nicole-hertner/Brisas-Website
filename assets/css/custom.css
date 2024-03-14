@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Imperial+Script&display=swap');
+
+
+body {
+    font-family: "Farro", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    background-color: rgb(255 238 213 /0.5);
+}
+
+.imperial-script-regular
+ {
+    font-family: "Imperial Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size:4em;
+    width: 200px;
+    color: black;
+    background-color: rgb(255 238 213 /0.5);
+    border:  1px solid burlywood;
+    border-radius: 2em 0 2em 0;
+    padding: 0.5em;
+ }
+
+.navbar-nav li {
+    margin-right: 100px
+}
+
