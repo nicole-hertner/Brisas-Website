@@ -1,16 +1,16 @@
-!--
+<!-- 
     Aufgabe 1 vom 12-02.2024
     Was ist bei dem untenstehenden Code falsch?
  -->
-<tableborder="1"width="800">
+ <!-- <table border="1" width="800">
     <thead>
-        <trheight="150">
-            <thcolspan="3">Header</th>
+        <tr height="150">
+            <th colspan="3">Header</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <tdrowspan="2">1.1</td>
+            <td rowspan="2">1.1</td>
             <td>1.2</td>
        
         </tr>
@@ -25,21 +25,21 @@
             <td>3.3</td>
         </tr>
     </tbody>
-</table>
+</table> -->
  
 <!--
     Lösung 1 vom 12-02.2024
  -->
- 
-<tableborder="1"width="800">
+<!--  
+<table border="1" width="800">
     <thead>
-        <trheight="150">
-            <thcolspan="3">Header</th>
+        <tr height="150">
+            <th colspan="3">Header</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <tdrowspan="2">1.1</td>
+            <td rowspan="2">1.1</td>
             <td>1.2</td>
             <td>1.3</td>
        
@@ -56,23 +56,23 @@
         </tr>
     </tbody>
 </table>
- 
+  -->
 <!--
     Hausaufgabe: Besucht den Link https://wiki.selfhtml.org/wiki/SELFHTML
     Dann versucht die zwei Tabellen (Screenshot) nachzubauen. Verwendet dazu die Attributte rowspan und colspan.
 -->
  
 <!-- Lösung 1 -->
-<tableborder="1"width="800">
+<!-- <table border="1" width="800">
     <thead>
-        <trheight="100">
-            <thcolspan="3">Header</th>
+        <tr height="100">
+            <th colspan="3">Header</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <tdwidth="80">Menu 1</td>
-            <tdrowspan="6">Content</td>  
+            <td width="80">Menu 1</td>
+            <td rowspan="6">Content</td>  
         </tr>    
         <tr>
             <td>Menu 2</td>
@@ -90,15 +90,15 @@
             <td>Menu 6</td>
         </tr>      
         <tr>
-            <thheight="60"colspan="3">Footer</th>
+            <th height="60" colspan="3">Footer</th>
         </tr>
     </tbody>
-</table>
+</table> -->
 <!-- Lösung 2  Bei dieser Lösung musste gebastelt werden da die Zellen ihre Breite von der oberen erben. -->
-<tableborder="1"width="800">
+<!-- <table border="1" width="800">
     <thead>
-        <trheight="100">
-            <thcolspan="5">Header</th>
+        <tr height="100">
+            <th colspan="5">Header</th>
         </tr>
     </thead>
     <tbody>
@@ -111,20 +111,364 @@
         </tr>
     </tbody>
 </table>
-<tableborder="1"width="800">
+<table border="1" width="800">
     <tbody>
         <tr>
-            <tdwidth="200"height="300">aside</td>
+            <td width="200" height="300">aside</td>
             <td>content</td>
         </tr>
-        <trheight="60">
-            <thcolspan="2">Footer</th>
+        <tr height="60">
+            <th colspan="2">Footer</th>
         </tr>
     </tbody>
-</table>
+</table> -->
 <!--
     Natürlich würde man in der heutigen Zeit keine Seite mehr so progarmmmieren. Dies war aber vor rund 25 Jahren so üblich.
     Diese Übung ist aber ganz gut um die Vorstellungskraft zu trainiern. Denn wenn wir mit HTML/CSS programmieren ist einfacher je besser
     die Vorstellungskraft ist.
 -->
  
+<!--
+    CSS: Kaskadierendes Style-Sheet
+    Vererbung:
+-->
+ 
+<!--
+    - padding -> Innenabstand
+    - margin -> Aussenabstand
+-->
+
+
+
+
+<!--
+    Wie kann CSS eingebunden werden
+    - mittels <style></style> im Header kann direkt CSS-Code geschrieben werden
+    <style>
+        body {
+            font-size: 150%;
+        }
+        .pt-box {
+            background-color: #ccf3ff;
+        }
+        .pt-box-header {
+            background-color: #0a8db4;
+            color: white;
+        }
+    </style>
+    - mittels inline-Style
+    <span style="color: red;">Element</span>
+    - mittels Einbinden im Head
+    <link rel="stylesheet" href="assets/css/style.css">
+-->
+ 
+<!--
+    Formel zur Berechnung von statisch zu Fluid
+    x = Spaltenbreite * 100 / Gesamtbreite
+-->
+ 
+<!--
+    Shorthand - Schreibweise Bsp.
+ 
+    margin-top: 10px;
+    margin-right:10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+ 
+    margin: 10px; -> Alle vier Seiten gleicher Abstand
+    margin: 10px 10px 10px 10px; -> oben, rechts, unten, links
+ 
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+ 
+    margin: 10px 20px; -> gelesen: verikal 10px, horizontal: 20px
+ 
+
+    Schlüsselwort: !important
+    Mit !important können wir CSS-Eigenschaften erzwingen auch wenn die eEigenschaft in einem anderen CSS deklariert wurde.
+    Möglichst wenig verwenden da es das CSS unnötig Pflegeaufwändig macht.
+ 
+    # Überladungen wenn möglich vermeiden
+    Bsp.
+    .nav li a { color: green; }
+    besser:
+    .nav a { color: green; }
+ 
+    div.nav { ... }
+ 
+    .nav { ... }
+ 
+    ## Das Box-Modell ##
+    # physische Aspetke eines Blocks:
+    height
+    width
+    writing-mode -> bestimmt die Laufrichtung (horizontal, vertical, rtl, ltr), hier muss umgedacht werden
+    Dafür gibt es logische Eigenschaften
+    inline-size (Grösse in der Inline-Achse),
+    block-size (Grösse in der Box-Achse) die beden passen sich in der Schreibrichtung an.
+ 
+    # Masseinheiten in CSS
+    - Absolute Masseinheiten
+        cm, mm, px (Pixel), pt (Punkt)
+        In der Regel verwenden ich, wie auch viele andere Pixel nur dann wenn ich absolute Werte benötige.
+        Ausnahme: print.css
+        mm, cm, pt, pc (Pica), in (inch)
+ 
+    - Relative Masseinheiten
+        %, em oder rem
+ 
+    Angaben in % sind relativ zur Grösse vom Eltern-Element! Wenn wir eine Box mit einer Breite von 50% erstellen,
+    nimmt die Hälfte des Raumes ein, der ihr normaleweise zustehen würde. Entweder Browserfenster oder Eltern-Element.
+ 
+    Die Einheiten em und rem basieren auf der Schrift. Diese beiden Masseinheiten stehen relativ zur Basisgrösse in HTML-Elements.
+    Standard ist die Basisschriftgrösse, wenn ein CSS diese nicht anders definiert 16px -> 1em = 1rem = 16px.
+    Die Basisschriftart kann aber auch anders definiert werden. Meistens auf dem Eltern-Element html oder body
+ 
+    Beispiel: Definition einer Basisschriftgrösse mit deren Auswirkungen auf abgeleitete Einheiten
+    html { font-size: 125%; } -> 20px;
+    h1 { font-size: 1.75rem;} -> 1.75 * 20px = 35px
+    p { font-size: 1rem; } -> 20px
+ 
+    => Der rem-Wert orientiert sich an der Basisschriftgrösse im root (html)!
+    Die Abhängigkeit von einer Basischriftgrösse ist ein grosser Vorteil von em und rem gegenüber dem px.
+    Wenn wir uns später mal entscheiden dass die Schrift etwas grösser sein soll, müssen nur die Basisschriftgrössen an einer einzigen Stelle
+    geändert werden.
+ 
+    => rem bezieht sich immer auf die Basischriftgrösse, wie es einmalig definiert wurde. em auf den altuellen Kontext!
+    html { font-size: 125%;} -> 20px;
+    h1 { font-size: 1.75em} -> 1.75 * 20px = 35px
+    h1 a { font-size: 0.8em } -> 0.8 * 35px = 28px;
+ 
+    # Masseinheit Viewport-Grössen
+    Kleine Bildschirme können gut auch mit kleineren Schriftarten umgehen.
+    Für solche Situationen hat man eine besondere Masseinheit entwickelt: vw, vh, vmax, vmin. Diese beziehen sich auf den Viewport.
+ 
+    Beispiel:
+    h3 { font-size: 5vw; }
+ 
+    Die Grösse dieser Überschrift entspricht 5% der Breite des Viewport ( 1vw = 1% der Viewport-Breite).
+    Bedeutet also, die Schriftgrösse wächst mit der Breite des zur Verfügung stehenden Raums.
+ 
+    Im Normalfall nimmt jede HTML-Box genau den Raum ein, der ihr zur Verfügung steht. Möchte man eine explizite Grösse einer Box festlegen,
+    verwenden wir die CSS-Eigenschaft height oder width;
+ 
+    .box2 {
+    width: 5cm;
+    background-color: lightgreen;
+    }
+ 
+    In gewissen Fällen kann es sinnvoll sein, der Box eine maximale Breite zu geben (max-width) oder (min-with)
+   
+    Wollen wir den Innenabstand einer Box definieren verwenden wir die Eigenschaft padding. Der Wert wird zur Breite der Box hinzugefügt.
+ 
+    .box {
+        background-color: lightgrey;
+        color: var(--textDark);
+        width: 300rem;
+    }
+ 
+    .box2 {
+        width: 50rem;
+        background-color: lightgreen;
+        padding: 0.5rem;
+    }
+ 
+    Mit der Angabe padding: 10px wird festgelegt, dass auf allen Seiten 10rem Innenabstand gelten.
+    Alternativ kann mit padding-top, padding-right, padding-bottom, padding-left auch unterschiedliche Abstände definiert werden.
+ 
+    Weiterführung shorthand
+    - Zwei Angaben
+        padding: 1em 1.5em; => Oben und unten 1em / rechts und links 1.5em
+    - Drei Angaben
+        padding: 1em 1.5em 2em; => Oben 1em, rechts und links 1.5em und unten 2em
+    - Vier Angaben:
+        padding: 1em 1.5em 2em 1.6em => Im Uhrzeigersinn (oben, rechts, unten, links)
+ 
+    # Rahmen
+    Rahmen werden über die CSS-Eigenschaft border definiert
+    - Farbe des Rahmens: border-color
+    - Liniendicke: border-width;
+    - Linienart: border-style;
+        solid: durchgezogen
+        dotted: gepunktet
+        dashed: getsrichelt
+        uvm.
+ 
+    Um einen Rahmen zu erstellen müssen alle 3 Angaben gemacht werden: border-width, border-color, border-style
+ 
+    border: 0.3em solid red;
+ 
+    Es kann auch angegebn werden, auf welcher Seite der HTML-Box ein Rahmen definiert werden soll. Dazu nutzen wir die Schlüsselwörter: -top, -right, -bottom und -left
+ 
+    border-left-style: dotted;
+    border-top-width: 0.5em;
+    border-right-style: dashed;
+    border-bottom-color: green;
+ 
+    # Border-Radius
+    Wir wollen einen Kreis:
+ 
+    .box2 {
+    margin-top: 100px;
+    margin-left: 50px;
+    width: 8rem;
+    height: 8rem;
+    background-color: darkgreen;
+    padding: 1rem;
+    border-radius: 50%;
+    }
+ 
+    Wichtig: Höhe und Breite der Box müssen gleich sein bei radius 50%
+ 
+    Auch hier kann mit shorthand gearbeitet werden:
+ 
+    - Zwei Angaben
+        Wert 1: oben links und unten rechts
+        Wert 2: oben rechts und unten links
+    - Drei Angaben
+        Wert 1: oben links
+        Wert 2: oben rechts und unten links
+        Wert 3: unten rechts
+    - Vier Angaben
+        Werte für die 4-Ecken im Uhrzeigersinn
+        oben, rechts, unten, links
+ 
+    In der Kurzschreibweise gibt es auch noch eine besondere Form von Angaben
+   
+    border-radius: 1.2em / 0.4em;
+ 
+    Bei der Verwendung eines slash / bezieht sich der erste Wert auf die horizontalen Radius
+    der zweite auf die vertikalen Radius
+ 
+    # Aussenabstände #
+    Auch die Aussenabstände werden wie bei den Innenabständen zu der Box dazugerechnet. Der Aussenabstand wir mit
+    margin angegeben. Auch bei margin können die vier Richtungen in shorthand angegeben werden.
+ 
+    margin: 1px 5px 10px 4px;
+ 
+    Bei Aussenabständen gibt es Besonderheiten, die uns immer mal wieder Kopfzerbrechen auslösen.
+    Vertikale Aussenabstände kollabieren. Was bedeutet das:
+ 
+    -   Stehen zwei Boxen nebeneinander, addieren sich ihre Aussenabstände, so wie man das erwarten würde. Hat Box 1 einen
+        Aussenabstand von 100px nach rechts und Box2 einen Aussenabnstand von 100px nach links, sind die Boxen 200px voneinander entfernt.
+        100px + 100px = 200px.
+    -   Stehen zwei Boxen untereinander, entfällt der kleinere der beiden Aussenabstände. Hat Box1 einen unteren Aussenabstand von 100px
+        und Box2 einen oberen Aussenabstand von 100px, sind die beiden Boxen 100px voneinander entfernt.
+        100px + 100px = 100px;
+   
+-->
+ 
+<!--
+ 
+    Beispiel Kollabierung Vertikal im Box-Modell CSS
+ 
+    html {
+    font-size: 100%;
+}
+ body {
+    background-color: lightseagreen;
+    color: var(--text);
+    font-size: 14px;
+    margin: 0;
+}
+ 
+.box1 {
+    display: inline-block;
+    background-color: #6f7e7c;
+    width: 25%;
+    height: 4rem;
+    text-align: center;
+    margin-right: 10px;
+}
+ 
+.box2 {
+    display: inline-block;
+    background-color: #6f7e7c;
+    width: 25%;
+    height: 4rem;
+    text-align: center;
+    margin-left: 10px;
+ 
+}
+ 
+.box3 {
+    background-color: #af9d70;
+    width: 25%;
+    height: 4rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+ 
+
+.box4 {
+    background-color: #af9d70;
+    width: 25%;
+    height: 4rem;
+    text-align: center;
+    margin-top: 10px;
+ 
+}
+ 
+.mutter {
+    margin: 30px;
+    background-color: #cecece;
+}
+ 
+HTML:
+ 
+<body>
+   <span style="padding: 20px;">Body</span>
+    <div class="mutter">
+        <div class="box1">Box 1</div>
+        <div class="box2">Box 2</div>
+   
+        <div class="box3">Box 3</div>
+        <div class="box4">Box 4</div>
+    </div>
+   
+</body>
+ 
+
+# Box-Modell zusammengefasst #
+Das Box-Modell besagt, dass wenn wir eine Breite angeben und Werte für den Innenabstand, Rahmen und Aussenabstand definieren, werden diese
+zur Breite dazugerechnet.
+ 
+In der Praxis führt genau dies zu Problemen, besonders bei Boxen mit Prozentangaben.
+ 
+Nebst dem Block-Element gibt es auch Inline-Elemente. Wie sieht es nun dort mit Box-Modell aus. Vieles von dem was wir unsangeschaut haben,
+lassen sich auch auf Inline-Elemente übertragen. Hier einige Besonderheiten:
+ 
+-   Inline-Elemente sind so hoch und breit wie ihr Inhalt. Es macht hier keinen Sinn wenn wir height und width angeben.
+-   Während sich padding, border und margin nach links und rechts wie bei Block-Elementen verhalten, unterscheidet sich das Verhalten nach
+    oben und unten stark.
+-   margin nach oben und unten hat bei Inline-Bxen keine Wirkung
+-   Mit border lassen sich Linien oben und unten umInline_Boxen legen, die mit padding auch verschoben werden können.
+    Allerdings verändert sich dadurch nicht die Zeilenhöhe im Text.
+ 
+# floting #
+Die CSS-Eighenschaft float rückt Elemente entweder nach links oben oder nach rechts oben. Alle nachfolgende Inghalte fliessen an dem float-Element
+vorbei, sofer der Platz vorhanden ist.
+ 
+img { float: left; margin-right: 10px; }
+ 
+So umläuft der Text das Bild auf der rechten Seite. Mit der Eigenschaft clear können wir dies unterbrechen, beispielsweisewenn wir einen neuen Absatz schreiben.
+ 
+
+## Bootstrap ##
+ 
+In der heutigen Zeit werden oft Frameworks verwendet um eine Seite zu gestallten. Diese Frameworks bieten CSS, less und JavaScript Dateien
+welche in der Regel kostenlos verwendet werden können. Das am meissten genutze ist Bootstrap.
+ 
+Es macht aber Sinn wenn wir in der Lage sind, dieses Framework nach unserem Geschmack anzupassen. EIie goldene Regel dabei:
+Man sollte wenn möglich niemals die Originaldatei ändern. Bootstrap arbeitet unter anderem mit Flex-Box. Dieses verhaltet sich anders als
+das bisherige Box-Modell. Die Elemente werden innerhalb einer Achse ausgerichtet. Mehr dazu einandermal.
+ 
+Download von Bootstrap ist zu empfehlen. Alternativ könnte diese auch mittels cdn-link importiert werden. Setz aber voraus dass die Seite dann immer
+Internetverbindung hat.
+ 
+Der Donwload:
+https://getbootstrap.com
+ 
+
